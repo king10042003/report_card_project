@@ -1,0 +1,13 @@
+{% extends 'report_card/base.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <h2>Welcome to the Student Report System</h2>
+        <form method="get" action="{% url 'search_results' %}" class="form-inline d-inline-block mt-4">
+            <input class="form-control mr-2" type="text" name="q" placeholder="Search by name" required>
+            <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+    </div>
+{% endblock %}

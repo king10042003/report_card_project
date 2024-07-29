@@ -1,0 +1,27 @@
+{% extends 'report_card/base.html' %}
+
+{% block title %}Student Detail{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Student Details</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <td>{{ student.name }}</td>
+        </tr>
+        <tr>
+            <th>Class</th>
+            <td>{{ student.class_name }}</td>
+        </tr>
+        <tr>
+            <th>Roll Number</th>
+            <td>{{ student.roll_number }}</td>
+        </tr>
+        <!-- Add more fields as needed -->
+    </table>
+    <a href="{% url 'add_mark' student_pk=student.pk %}" class="btn btn-primary">Add Marks</a>
+    <a href="{% url 'delete_student' student_pk=student.pk %}" class="btn btn-danger">Delete Student</a>
+    <a href="{% url 'welcome' %}" class="btn btn-secondary">Back to Home</a>
+</div>
+{% endblock %}
